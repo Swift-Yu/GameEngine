@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{F2FA9359-1C99-274F-0BEB-79991E864C5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_2;UNITY_5_6;UNITY_5;UNITY_64;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_OSX;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_GAMECENTER;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_VR;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_OSX;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Common\Json\Json.cs" />
+     <Compile Include="Assets\Common\Json\JsonJsonFx.cs" />
+     <Compile Include="Assets\Common\Json\MiniJSON.cs" />
+     <Compile Include="Assets\Common\MD5.cs" />
+     <Compile Include="Assets\Common\Reflection.cs" />
+     <Compile Include="Assets\Common\Zlib\Adler32.cs" />
+     <Compile Include="Assets\Common\Zlib\Deflate.cs" />
+     <Compile Include="Assets\Common\Zlib\InfBlocks.cs" />
+     <Compile Include="Assets\Common\Zlib\InfCodes.cs" />
+     <Compile Include="Assets\Common\Zlib\InfTree.cs" />
+     <Compile Include="Assets\Common\Zlib\Inflate.cs" />
+     <Compile Include="Assets\Common\Zlib\StaticTree.cs" />
+     <Compile Include="Assets\Common\Zlib\SupportClass.cs" />
+     <Compile Include="Assets\Common\Zlib\Tree.cs" />
+     <Compile Include="Assets\Common\Zlib\ZInputStream.cs" />
+     <Compile Include="Assets\Common\Zlib\ZOutputStream.cs" />
+     <Compile Include="Assets\Common\Zlib\ZStream.cs" />
+     <Compile Include="Assets\Common\Zlib\ZStreamException.cs" />
+     <Compile Include="Assets\Common\Zlib\Zlib.cs" />
+     <Compile Include="Assets\Common\ZlibCompress.cs" />
+     <Compile Include="Assets\Engine\Audio\AudioManager.cs" />
+     <Compile Include="Assets\Engine\Audio\IAudio.cs" />
+     <Compile Include="Assets\Engine\Base\ThreadHelper.cs" />
+     <Compile Include="Assets\Engine\NetWork\Http\HttpClient.cs" />
+     <Compile Include="Assets\Engine\NetWork\Http\HttpDownload.cs" />
+     <Compile Include="Assets\Engine\NetWork\Http\HttpDownloadFile.cs" />
+     <Compile Include="Assets\Engine\NetWork\Http\HttpRequest.cs" />
+     <Compile Include="Assets\Engine\NetWork\Interface\NetWorkInterface.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetLink.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetLinkMonitor.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetLinkSink.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetManager.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetPackage.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetService.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetThread.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetWork.cs" />
+     <Compile Include="Assets\Engine\NetWork\NetWorkDef.cs" />
+     <Compile Include="Assets\Engine\NetWork\TSwitchList.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\AssetManager.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\AudioSource.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Effect.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\GameObject.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IAsset.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IAudioSource.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IEffect.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IGameObject.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IPrefab.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\ISprite.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IUIAtlas.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\IUIFont.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Interface\Itexture.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\Prefab.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\RenderObjManager.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\UIAtlas.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\UIFont.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\UISprite.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Asset\UITexture.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\AssetBundleResource.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\BaseTask.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\Resource.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\ResourceManager.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\ResourceManagerImpl.cs" />
+     <Compile Include="Assets\Engine\ResouceMangaer\TextureResource.cs" />
+     <Compile Include="Assets\Engine\Upgrade\GameUpgrade.cs" />
+     <Compile Include="Assets\Engine\Upgrade\IGameEntry.cs" />
+     <Compile Include="Assets\Engine\Upgrade\State\CheckVersion.cs" />
+     <Compile Include="Assets\Engine\Upgrade\State\CopyFile.cs" />
+     <Compile Include="Assets\Engine\Upgrade\State\DownloadFile.cs" />
+     <Compile Include="Assets\Engine\Upgrade\State\GameRun.cs" />
+     <Compile Include="Assets\Engine\Upgrade\State\GameStateBase.cs" />
+     <Compile Include="Assets\Engine\Upgrade\State\GameUpdate.cs" />
+     <Compile Include="Assets\Engine\Upgrade\UpgradeEvent.cs" />
+     <Compile Include="Assets\Engine\Upgrade\Version.cs" />
+     <Compile Include="Assets\Engine\Upgrade\VersionItem.cs" />
+     <Compile Include="Assets\ThreadTest.cs" />
+     <Compile Include="Assets\Utility\Base\ArrayListEx.cs" />
+     <Compile Include="Assets\Utility\Base\EngineNativeMethod.cs" />
+     <Compile Include="Assets\Utility\Base\ObjectPool.cs" />
+     <Compile Include="Assets\Utility\Base\Singleton.cs" />
+     <Compile Include="Assets\Utility\Base\StringUtility.cs" />
+     <Compile Include="Assets\Utility\Base\ftcode.cs" />
+     <Compile Include="Assets\Utility\EventEngine\EventEngine.cs" />
+     <Compile Include="Assets\Utility\FileUtil\FileUtil.cs" />
+     <Compile Include="Assets\Utility\FileUtil\WWWLoad.cs" />
+     <Compile Include="Assets\Utility\IniFile.cs" />
+     <Compile Include="Assets\Utility\Log\Log.cs" />
+     <Compile Include="Assets\Utility\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\Utility\StateMachine\StateMachine.cs" />
+     <Compile Include="Assets\Utility\Time\TimeHelper.cs" />
+     <Compile Include="Assets\Utility\Time\TimerAxis.cs" />
+     <None Include="Assets\Shader\mdiffuse.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VR">
+ <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="JsonFx.Json">
+ <HintPath>/Users/swiftyu/Desktop/个人项目/MEngineBase/Assets/Common/JsonFx.Json.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>
