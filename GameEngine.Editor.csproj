@@ -125,14 +125,14 @@
     <Reference Include="DOTween43">
       <HintPath>Assets/Plugins/DOTween/DOTween43.dll</HintPath>
     </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>Assets/Plugins/DOTween/Editor/DOTweenEditor.dll</HintPath>
+    <Reference Include="DOTween46">
+      <HintPath>Assets/Plugins/DOTween/DOTween46.dll</HintPath>
     </Reference>
     <Reference Include="DOTween50">
       <HintPath>Assets/Plugins/DOTween/DOTween50.dll</HintPath>
     </Reference>
-    <Reference Include="DOTween46">
-      <HintPath>Assets/Plugins/DOTween/DOTween46.dll</HintPath>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets/Plugins/DOTween/Editor/DOTweenEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +181,7 @@
     <Compile Include="Assets\XLua\Src\Editor\TemplateRef.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\LuaScripts\FrameWork\utils\memory.lua.txt" />
     <None Include="Assets\Plugins\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\DOTween\DOTween43.xml" />
     <None Include="Assets\Plugins\DOTween\DOTween46.xml" />

@@ -83,11 +83,11 @@
     <Reference Include="DOTween43">
       <HintPath>Assets/Plugins/DOTween/DOTween43.dll</HintPath>
     </Reference>
-    <Reference Include="DOTween50">
-      <HintPath>Assets/Plugins/DOTween/DOTween50.dll</HintPath>
-    </Reference>
     <Reference Include="DOTween46">
       <HintPath>Assets/Plugins/DOTween/DOTween46.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween50">
+      <HintPath>Assets/Plugins/DOTween/DOTween50.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>D:/officeSoftware/Unity5.6.1/Unity5.6.1/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
@@ -168,7 +168,9 @@
     <Compile Include="Assets\Engine\Upgrade\UpgradeEvent.cs" />
     <Compile Include="Assets\Engine\Upgrade\Version.cs" />
     <Compile Include="Assets\Engine\Upgrade\VersionItem.cs" />
-    <Compile Include="Assets\ThreadTest.cs" />
+    <Compile Include="Assets\Scripts\AssetLoaderManager.cs" />
+    <Compile Include="Assets\Scripts\LuaManager.cs" />
+    <Compile Include="Assets\Scripts\ThreadTest.cs" />
     <Compile Include="Assets\Utility\Base\ArrayListEx.cs" />
     <Compile Include="Assets\Utility\Base\EngineNativeMethod.cs" />
     <Compile Include="Assets\Utility\Base\ObjectPool.cs" />
@@ -293,8 +295,10 @@
     <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\ByString\ByString.cs" />
     <Compile Include="Assets\XLua\Tutorial\LoadLuaScript\Loader\CustomLoader.cs" />
     <Compile Include="Assets\XLua\Tutorial\LuaCallCSharp\LuaCallCs.cs" />
+    <Compile Include="Assets\test.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\LuaScripts\FrameWork\utils\memory.lua.txt" />
     <None Include="Assets\Plugins\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\DOTween\DOTween43.xml" />
     <None Include="Assets\Plugins\DOTween\DOTween46.xml" />
