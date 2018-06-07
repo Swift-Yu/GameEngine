@@ -52,9 +52,21 @@ public class LuaManager : Singleton<LuaManager> {
         {
             //检查后缀是否为.lua
             byte[] readFile = null;
-            string strFilePath = filename.EndsWith(".lua") ? filename : string.Format("{0}.lua", filename);
-            strFilePath = strFilePath.Replace("\\", "/");
-            readFile = System.IO.File.ReadAllBytes(Application.dataPath + "/"+ strFilePath);
+            if (!Application.isEditor)
+            {
+                //执行一个打包策略，将LuaScripts文件夹下的子目录统一编辑到lua文件名里面，使用“_”链接
+                filename = filename.Replace("\\", "_").Replace("/", "_").Replace(".lua", "").ToLower();
+                if (!m_dicLuaBytes.TryGetValue(filename, out readFile))
+                {
+                    Utility.Log.Error("load lua File Failed {0}", filename);
+                }
+            }
+            else
+            {
+                string strFilePath = filename.EndsWith(".lua") ? filename : string.Format("{0}.lua", filename);
+                strFilePath = strFilePath.Replace("\\", "/");
+                readFile = System.IO.File.ReadAllBytes(Application.dataPath + "/" + strFilePath);
+            }
             return readFile;
         });
     }
@@ -78,7 +90,37 @@ public class LuaManager : Singleton<LuaManager> {
     //移动端加载lua文件
     public void LoadLuaFile(string strFilePath)
     {
-        
+        if (!Application.isEditor)
+        {
+            strFilePath = strFilePath.ToLower();
+            if (m_dicAssetBundle.ContainsKey(strFilePath))
+            {
+                return;
+            }
+            string strResPath = FileUtils.Instance().FullPathFileName(ref strFilePath, FileUtils.UnityPathType.UnityPath_CustomPath);
+            AssetBundle ab = AssetBundle.LoadFromFile(strResPath);
+            //如果发现外部环境没有打包资源，则直接从包内加载资源
+            if (ab == null)
+            {
+                strResPath = FileUtils.Instance().FullPathFileName(ref strFilePath, FileUtils.UnityPathType.UnityPath_StreamAsset);
+                ab = AssetBundle.LoadFromFile(strResPath);
+            }
+            if (ab == null)
+            {
+                Utility.Log.Error("Load lua failed {0}", strFilePath);
+                return;
+            }
+            Utility.Log.Trace("Load lua success {0}", strFilePath);
+            m_dicAssetBundle.Add(strFilePath, true);
+            //多个lua文件会按照模块进行打包，而不是单个打包，加载的时候一起加载,使用textAsset进行储存
+            TextAsset[] ScirptTexts = ab.LoadAllAssets<TextAsset>();
+            for (int i = 0; i < ScirptTexts.Length; i++)
+            {
+                m_dicLuaBytes.Add(ScirptTexts[i].name, ScirptTexts[i].bytes);
+            }
+            //ab包使用完要及时卸载,包括内存里面已经加载出来的资源块
+            ab.Unload(true);
+        }
     }
 
     void OpenLibs()
@@ -103,9 +145,21 @@ public class LuaManager : Singleton<LuaManager> {
     {
         byte[] readFile = null;
 
-        string strFilePath = fileName.EndsWith(".lua")? fileName : string.Format("{0}.lua", fileName);
-        readFile = System.IO.File.ReadAllBytes(Application.dataPath + "/" + strFilePath);
+        if (!Application.isEditor)
+        {
+            fileName = fileName.Replace("\\", "_").Replace("/", "_").Replace(".lua", "").ToLower();
 
+            if (!m_dicLuaBytes.TryGetValue(fileName, out readFile))
+            {
+                Utility.Log.Error("Load Lua File Failed {0}", fileName);
+            }
+        }
+        else
+        {
+            string strFilePath = fileName.EndsWith(".lua") ? fileName : string.Format("{0}.lua", fileName);
+            readFile = System.IO.File.ReadAllBytes(Application.dataPath + "/" + strFilePath);
+            Utility.Log.Trace("Error to Do lua file");
+        }
         if (m_luaEnv != null && readFile != null)
         {
             object[] objs = m_luaEnv.DoString(readFile, fileName);
@@ -114,7 +168,6 @@ public class LuaManager : Singleton<LuaManager> {
 
             return objs;
         }
-        Utility.Log.Trace("Error to Do lua file");
         return null;
     }
 
